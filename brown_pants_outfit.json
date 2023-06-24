@@ -1,0 +1,83 @@
+[
+    {
+      "Outfit ID ": "1",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "1",
+      "Shirt Color ": "Pink",
+      "Shirt Hex Code": "#AE86B4"
+    },
+    {
+      "Outfit ID ": "2",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "2",
+      "Shirt Color ": "Light Grey Striped",
+      "Shirt Hex Code": "#B9B9B9"
+    },
+    {
+      "Outfit ID ": "3",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "3",
+      "Shirt Color ": "Lavender",
+      "Shirt Hex Code": "#ADADD4"
+    },
+    {
+      "Outfit ID ": "4",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "4",
+      "Shirt Color ": "White Shirt Blue Striped",
+      "Shirt Hex Code": "#98ADC9"
+    },
+    {
+      "Outfit ID ": "5",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "5",
+      "Shirt Color ": "Maroon",
+      "Shirt Hex Code": "#9F3353"
+    },
+    {
+      "Outfit ID ": "6",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "6",
+      "Shirt Color ": "Light Blue",
+      "Shirt Hex Code": "#BFDBEB"
+    },
+    {
+      "Outfit ID ": "7",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "7",
+      "Shirt Color ": "Light Yellow",
+      "Shirt Hex Code": "#FCEACD"
+    },
+    {
+      "Outfit ID ": "8",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "8",
+      "Shirt Color ": "Dark Blue",
+      "Shirt Hex Code": "#575B7D"
+    },
+    {
+      "Outfit ID ": "9",
+      "Pant ID": "1",
+      " Pant Color ": "Brown",
+      "Pant Hex Code": "#6A5C51",
+      "Shirt ID": "9",
+      "Shirt Color ": "Violet",
+      "Shirt Hex Code": "#55303C"
+    }
+  ]

@@ -1,0 +1,280 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Combination !</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    
+    // import { API_KEY, API_URL } from "/Keys.js";
+    // varaibel to store the sheets data
+    let json_data;
+
+    const API_KEY = "2zkuo44qxzjep"
+    const API_URL = `https://sheetdb.io/api/v1/${API_KEY}`;
+    // const API_TEST_URL = "https://sheetdb.io/api/v1/58f61be4dda40";
+
+    function get_shirt_for_brown_pant() {
+      console.log("Function called ");
+      // fetch("https://sheetdb.io/api/v1/2zkuo44qxzjep/search?Pant ID=1")
+      fetch("./brown_pants_outfit.json")
+        .then((response) => response.json())
+        .then((data) => {
+          json_data = data;
+          console.log("First data Outside data is  ", json_data);
+          let randomObject = fun_randomObject(json_data);
+          console.log("Random shirt with cream pant is ........");
+          console.log(randomObject); // This will log a random object from the JSON data.
+
+          document.getElementById("container_to_show_result").innerHTML = `
+
+          <div class="container_to_show_result_style">
+          
+          <p> Pant You should wear is <b id="pant_color">${randomObject[" Pant Color "]}</b></p>
+          <p> Shirt You should wear is <b id="shirt_color">${randomObject["Shirt Color "]}</b></p>
+
+        <div class="dont_show">
+          <p> The id of the outfit is  <b id="outfit_id">${randomObject["Outfit ID "]}</b></p>
+
+
+        <p> The id of the pant is  <b id="pant_id">${randomObject["Pant ID"]}</b></p>
+        <p> The HEX Code of the pant is <b id="pant_hex">${randomObject["Pant Hex Code"]}</b></p>
+
+      
+      
+        <p> The id of the shirt is <b id="shirt_id">${randomObject["Shirt ID"]}</b></p>
+        <p> The HEX Code of the shirt is <b id="shirt_hex">${randomObject["Shirt Hex Code"]}</b></p>
+             </div>
+</div>
+
+    `;
+        });
+    }
+
+    function get_shirt_for_cream_pant() {
+      console.log("Function called ");
+      
+      fetch("./cream_pants_response.json")
+        .then((response) => response.json())
+        .then((data) => {
+          json_data = data;
+          console.log("First data Outside data is  ", json_data);
+          let randomObject = fun_randomObject(json_data);
+          console.log("Random shirt with cream pant is ........");
+          console.log(randomObject); // This will log a random object from the JSON data.
+
+          document.getElementById("container_to_show_result").innerHTML = `
+
+
+          <div class="container_to_show_result_style">
+          
+          <p> Pant You should wear is <b id="pant_color">${randomObject[" Pant Color "]}</b></p>
+          <p> Shirt You should wear is <b id="shirt_color">${randomObject["Shirt Color "]}</b></p>
+
+        <div class="dont_show">
+          <p> The id of the outfit is  <b id="outfit_id">${randomObject["Outfit ID "]}</b></p>
+
+
+        <p> The id of the pant is  <b id="pant_id">${randomObject["Pant ID"]}</b></p>
+        <p> The HEX Code of the pant is <b id="pant_hex">${randomObject["Pant Hex Code"]}</b></p>
+
+      
+      
+        <p> The id of the shirt is <b id="shirt_id">${randomObject["Shirt ID"]}</b></p>
+        <p> The HEX Code of the shirt is <b id="shirt_hex">${randomObject["Shirt Hex Code"]}</b></p>
+             </div>
+</div>
+
+
+
+    `;
+        });
+    }
+
+    function get_shirt_for_black_pant() {
+      console.log("Function called ");
+
+      fetch("./black__pants_outfit.json")
+        .then((response) => response.json())
+        .then((data) => {
+          json_data = data;
+          console.log("First data Outside data is  ", json_data);
+          let randomObject = fun_randomObject(json_data);
+
+          console.log(randomObject); // This will log a random object from the JSON data.
+
+          // console.log("RANDOM OUTFIT DEETS ", random_outfit_obj);
+          document.getElementById("container_to_show_result").innerHTML = `
+
+          <div class="container_to_show_result_style">
+          
+            <p> Pant You should wear is <b id="pant_color">${randomObject[" Pant Color "]}</b></p>
+            <p> Shirt You should wear is <b id="shirt_color">${randomObject["Shirt Color "]}</b></p>
+
+          <div class="dont_show">
+            <p> The id of the outfit is  <b id="outfit_id">${randomObject["Outfit ID "]}</b></p>
+
+
+          <p> The id of the pant is  <b id="pant_id">${randomObject["Pant ID"]}</b></p>
+          <p> The HEX Code of the pant is <b id="pant_hex">${randomObject["Pant Hex Code"]}</b></p>
+
+        
+        
+          <p> The id of the shirt is <b id="shirt_id">${randomObject["Shirt ID"]}</b></p>
+          <p> The HEX Code of the shirt is <b id="shirt_hex">${randomObject["Shirt Hex Code"]}</b></p>
+               </div>
+</div>
+
+              `;
+        });
+    }
+
+    function fun_randomObject(jsonData) {
+      // Get the length of the JSON data array.
+      const length = jsonData.length;
+
+      // Generate a random number between 0 and the length of the array.
+      const randomIndex = Math.floor(Math.random() * length);
+
+      // Return the object at the random index.
+      return jsonData[randomIndex];
+    }
+
+    function submit_data_to_sheets() {
+      console.log("THE DATA RETRIEVAL HAS STARTED......");
+
+      // get data from UI
+
+      outfit_id = document.getElementById("outfit_id").innerHTML;
+
+      pant_color = document.getElementById("pant_color").innerHTML;
+      pant_id = document.getElementById("pant_id").innerHTML;
+      pant_hex = document.getElementById("pant_hex").innerHTML;
+
+      shirt_id = document.getElementById("shirt_id").innerHTML;
+      shirt_color = document.getElementById("shirt_color").innerHTML;
+      shirt_hex = document.getElementById("shirt_hex").innerHTML;
+
+      console.log("Outfuit is is ", outfit_id);
+      console.log(
+        "Id is",
+        pant_id,
+        "Pant is",
+        pant_color,
+        " and shirt is ",
+        shirt_color
+      );
+
+      // upload the data into another sheet using API call
+
+      fetch(
+        `${API_URL}/?sheet=Outfits_worn_data`,
+        // "https://sheetdb.io/api/v1/2zkuo44qxzjep/?sheet=Outfits_worn_data",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            data: [
+              {
+                Unique_id: "INCREMENT",
+                DateTime: "DATETIME",
+                "Outfit ID ": outfit_id,
+                "Pant ID": pant_id,
+                " Pant Color ": pant_color,
+                "Pant Hex Code": pant_hex,
+                "Shirt ID": shirt_id,
+                "Shirt Color ": shirt_color,
+                "Shirt Hex Code": shirt_hex,
+              },
+            ],
+          }),
+        }
+      )
+        .then((response) => {
+          response.json();
+          console.log("DATA SENT SUCCESSFULLY ...................");
+          document.getElementById('confirmation').innerHTML=`
+          
+          <div class="alert alert-success" role="alert">
+        Your data has been successfully sent :)
+      </div>
+          
+          
+          `
+        })
+        .then((data) => console.log(data));
+    }
+  </script>
+
+  <!-- JS ENDS HERE  -->
+
+  <body>
+    <!-- <div data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40">
+    <p>{{name}}</p>
+</div> -->
+
+    <!-- FORMS STARTS HERE  -->
+
+    <div class="container">
+      <p class="title-text">Outfit Helper</p>
+      <form action="#">
+        <button
+          class="btn btn-secondary btn-lg"
+          onclick="get_shirt_for_black_pant()"
+        >
+          Generate shirt for Black Pant
+        </button>
+        <br />
+        <button
+          class="btn btn-secondary btn-lg"
+          onclick="get_shirt_for_cream_pant()"
+        >
+          Generate shirt for Cream Pant
+        </button>
+        <br />
+        <button
+          class="btn btn-secondary btn-lg"
+          onclick="get_shirt_for_brown_pant()"
+        >
+          Generate shirt for Brown Pant
+        </button>
+        <br />
+        <!-- <p></p> -->
+        <!-- <input type="submit" value="Generate shirt based on pant"> -->
+      </form>
+    </div>
+    <!-- FORM ENDS HERE  -->
+
+    <div class="container-to-show-result" id="container_to_show_result">
+      <!-- <p> Pant You should wear is <b>BLACK</b></p> -->
+      <!-- <p> Shirt You should wear is <b>White</b></p> -->
+    </div>
+    <div class="submit-form-container">
+      <button
+        class="btn btn-secondary btn-lg"
+        onclick="submit_data_to_sheets()"
+      >
+        submit outfit to your database
+      </button>
+    </div>
+    <div id="confirmation"class="confirmation">
+      <!-- <div class="alert alert-success" role="alert">
+        Your data has been successfully sent :)
+      </div> -->
+    </div>
+
+    <script src="https://sheetdb.io/handlebars.js"></script>
+  </body>
+</html>
